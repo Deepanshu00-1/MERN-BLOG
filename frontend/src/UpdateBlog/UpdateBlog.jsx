@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UpdateBlog = ()=>{
     const {backendUrl} = useContext(AppContext)
@@ -32,6 +33,7 @@ const UpdateBlog = ()=>{
             if(result.success = true){
                 navigate("/blogs")
             }
+            toast.success(result.data.message)
             console.log(result)
         })
         .catch(err => console.log(err))

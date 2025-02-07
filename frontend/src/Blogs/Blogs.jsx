@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Blogs = () => {
 
   const navigate = useNavigate();
-  const {backendUrl} = useContext(AppContext)
+  const {backendUrl, setUserData, setIsLoggedin} = useContext(AppContext)
 
   const [blogs, setBlogs] = useState([]);
 
@@ -38,12 +38,25 @@ const Blogs = () => {
     .catch(err => console.log(err))
   }
 
+  const logout = async()=>{
+    try {
+        axios.defaults.withCredentials = true;
+        const {data} = await axios.post(backendUrl + '/api/auth/logout')
+        data.success && setIsLoggedin(false)
+        data.success && setUserData(false)
+        navigate('/')
+
+    } catch (error) {
+        toast.error(error.message)
+    }
+}
+
   return (
     <>
       <div className="main">
         <header className="header">
           <h2>Personal Blog</h2>
-          <button className="header-btn">Logout</button>
+          <button className="header-btn" onClick={logout}>Logout</button>
         </header>
         <div className="blogs">
           <div className="leftside" >
