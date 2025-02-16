@@ -10,7 +10,7 @@ import blogRouter from "./routes/blogRoutes.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['https://mern-blog-f.vercel.app']
 
 app.use(cors({origin: allowedOrigins ,credentials: true, methods: ["POST", "GET", "PUT", "DELETE"]}));
 app.use(express.json());
