@@ -42,6 +42,7 @@ const UpdateBlog = ()=>{
     return(
         <>
         <div className="main-update">
+            <h1>Update Blog Here...</h1>
             <form className="update-form" action="" onSubmit={update}>
                 <label htmlFor="">Topic</label>
                 <input type="text" value={title} onChange={e=> setTitle(e.target.value)} /><br />

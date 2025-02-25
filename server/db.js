@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const ConnectDB = async()=>{
-    const conn = await mongoose.connect("mongodb+srv://krrohan129:wYN9Uda78KpSKUw9@cluster0.pssfh.mongodb.net/MERN-BLOG?retryWrites=true&w=majority&appName=Cluster0");
+    const conn = await mongoose.connect(process.env.MONGODB_URI);
     console.log("MongoDB Connected", conn.connection.host);
 }
 export default ConnectDB;

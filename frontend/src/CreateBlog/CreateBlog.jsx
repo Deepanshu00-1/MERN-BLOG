@@ -29,6 +29,7 @@ const CreateBlog = ()=>{
     return(
         <>
         <div className="main-create">
+            <h1>Add Blog Here...</h1>
             <form className="create-form" onSubmit={createBlog}>
                 <label htmlFor="">Title</label>
                 <input type="text" onChange={e => setTitle(e.target.value)} value={title} /><br />

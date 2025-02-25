@@ -44,7 +44,8 @@ const Navbar = () => {
 
   return (
     <div className="w-full flex justify-between items-center p-4 sm:p-6 sm:px-24 absolute top-0">
-      <img src={assets.logo} alt="" className="w-28 sm:w-32" />
+      {/* <img src={assets.logo} alt="" className="w-28 sm:w-32" /> */}
+      <h1 className="text-3xl text-gray-800 w-28 sm:w-32" >Blog</h1>
 
       {userData ? (
         <div className="w-8 h-8 flex justify-center items-center rounded-full bg-black text-white relative group">
