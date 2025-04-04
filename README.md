@@ -16,4 +16,5 @@ now run project
 for each part-
 
 frontend - npm run dev
+
 server - npm start
